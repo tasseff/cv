@@ -1,8 +1,8 @@
 # -*- ruby -*-
-require 'Set'
+require 'set'
 
-# Location of my webpage repo and relevant files in it.
-web_repo = '/Users/gamblin2/Sites/tgamblin.github.io'
+# Location of webpage repo and relevant files in it.
+web_repo = '~/Web/tasseff.com'
 
 # Recursively get all dependences of a tex file, return them as a set of file names.
 def get_deps(texfile, deps = Set.new([texfile]))
@@ -82,12 +82,12 @@ def build_pdf(name)
 end
 
 # === Tasks ===============================
-task :default => "todd-cv.pdf"
-task :grant   => "grant-cv.pdf"
+task :default => "tasseff-cv.pdf"
+task :grant => "grant-cv.pdf"
 
 # --- CV targets --------------------------
-task "todd-cv.pdf" do
-  build_pdf("todd-cv")
+task "tasseff-cv.pdf" do
+  build_pdf("tasseff-cv")
 end
 
 task "grant-cv.pdf" do
@@ -102,25 +102,25 @@ task :html do
 end
 
 # --- Upload to webpage -----------------------
-task :upload => :cv do
+task :upload => :default do
   # Locations in the web repo
-  cv   = "cv/todd-cv.pdf"
+  cv   = "cv/tasseff-cv.pdf"
   html = "_includes/bibliography.html"
 
-  cp "Bibliographies/bibliography.html", "#{web_repo}/#{html}"
-  cp "todd-cv.pdf", "#{web_repo}/#{cv}"
+  cp "Bibliographies/bibliography.html", File.expand_path("#{web_repo}/#{html}")
+  cp "tasseff-cv.pdf", File.expand_path("#{web_repo}/#{cv}")
 
-  Dir.chdir("#{web_repo}") do
-    system("git add #{cv}")
-    system("git add #{html}")
-    system("git commit -m 'CV update'")
-    system("git push")
-  end
+  #Dir.chdir("#{web_repo}") do
+  #  system("git add #{cv}")
+  #  system("git add #{html}")
+  #  system("git commit -m 'CV update'")
+  #  system("git push")
+  #end
 end
 
 # --- Cleanup -----------------------------
 task :clean do
-  files = ["todd-cv.pdf", "grant-cv.pdf"]
+  files = ["tasseff-cv.pdf", "grant-cv.pdf"]
   files.unshift Dir.glob(%w(*.aux *.bbl *.blg *.log *.out *synctex.gz*))
 	FileUtils.rm_f(files)
 end

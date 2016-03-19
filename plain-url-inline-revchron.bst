@@ -332,8 +332,8 @@ FUNCTION {format.names}
     { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % This highlights my name in bold if I'm an author
-      t "Todd Gamblin" =
-      	{"\textbf{{\color{mylinkcolor}Todd Gamblin}}" 't :=}
+      t "Byron Tasseff" =
+      	{"\textbf{{\color{mylinkcolor}Byron Tasseff}}" 't :=}
 	{}
       if$
 %%%%%%%%%%%%%%%%%%%%%%%%%%
