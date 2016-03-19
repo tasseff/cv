@@ -96,6 +96,9 @@ end
 
 # --- Generate html for bibliography ----------
 task :html do
+  Dir.chdir("Bibliographies/bib2xhtml") do
+    system("perl gen-bst.pl")
+  end
   Dir.chdir("Bibliographies") do
     system("./generate_html.sh")
   end

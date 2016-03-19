@@ -1,0 +1,3 @@
+[submodule "Bibliographies/bib2xhtml"]
+	path = Bibliographies/bib2xhtml
+	url = git@github.com:dspinellis/bib2xhtml.git
