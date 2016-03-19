@@ -96,11 +96,11 @@ end
 
 # --- Generate html for bibliography ----------
 task :html do
-  Dir.chdir "Bibliographies/bib2xhtml" do
+  Dir.chdir "bibliographies/bib2xhtml" do
     system "perl gen-bst.pl"
   end
 
-  Dir.chdir "Bibliographies" do
+  Dir.chdir "bibliographies" do
     system "./generate-html.sh"
   end
 end
@@ -111,7 +111,7 @@ task :upload => :default do
   cv   = "cv/tasseff-cv.pdf"
   html = "_includes/bibliography.html"
 
-  cp "Bibliographies/bibliography.html", File.expand_path("#{web_repo}/#{html}")
+  cp "bibliographies/bibliography.html", File.expand_path("#{web_repo}/#{html}")
   cp "tasseff-cv.pdf", File.expand_path("#{web_repo}/#{cv}")
 
   #Dir.chdir("#{web_repo}") do
