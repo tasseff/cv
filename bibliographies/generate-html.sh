@@ -35,8 +35,6 @@ EOF
 # Call the bibliography function for each section wanted in the output..
 bibliography Papers.bib "Conference &amp; Journal Papers"
 bibliography Workshops.bib "Workshop Papers &amp; Technical Reports"
-bibliography Books.bib "Book Chapters &amp; Articles"
-bibliography PhD.bib "Ph.D. Dissertation"
 bibliography Posters.bib "Posters &amp; Presentations"
 
 # Delete the temporary file.
