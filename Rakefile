@@ -83,15 +83,10 @@ end
 
 # === Tasks ===============================
 task :default => "tasseff-cv.pdf"
-task :grant => "grant-cv.pdf"
 
 # --- CV targets --------------------------
 task "tasseff-cv.pdf" do
   build_pdf("tasseff-cv")
-end
-
-task "grant-cv.pdf" do
-  build_pdf("grant-cv")
 end
 
 # --- Generate html for bibliography ----------
@@ -124,7 +119,7 @@ end
 
 # --- Cleanup -----------------------------
 task :clean do
-  files = ["tasseff-cv.pdf", "grant-cv.pdf"]
+  files = ["tasseff-cv.pdf"]
   files.unshift Dir.glob(%w(*.aux *.bbl *.blg *.log *.out *synctex.gz*))
 	FileUtils.rm_f(files)
 end

@@ -1,2 +1,2 @@
 # Requirements
-Install bibutils
+Do a git submodule init recursive update.
