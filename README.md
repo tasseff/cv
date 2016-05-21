@@ -1,2 +1,5 @@
-# Requirements
-Do a git submodule init recursive update.
+# usage
+```bash
+git submodule update --init --recursive
+rake
+```
