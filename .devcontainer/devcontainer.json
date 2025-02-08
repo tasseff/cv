@@ -10,6 +10,6 @@
                 "GitHub.copilot-chat"
             ]
         }
-    }
+    },
+    "initializeCommand": "git submodule update --init"
 }
-
