@@ -10,6 +10,6 @@
                 "GitHub.copilot-chat"
             ]
         }
-    }
+    },
+    "postCreateCommand": "git submodule update --recursive --init"
 }
-
